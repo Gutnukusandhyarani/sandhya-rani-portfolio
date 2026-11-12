@@ -1,0 +1,47 @@
+LINKEDIN PROJECT SECTION - READY TO PASTE
+
+Project name:
+SentinelTrace - Python-Based SSH Authentication Log Monitoring & Threat Detection
+
+Associated with:
+Independent Portfolio Project
+
+Dates:
+November 2026
+
+Description:
+Built a lightweight Python-based monitoring tool to help first-level SOC analysts identify suspicious authentication activity without manually reviewing raw SSH logs.
+
+• Parsed Linux OpenSSH authentication logs and normalized events by timestamp, host, username, source IP, and event type.
+• Implemented rule-based detections for repeated SSH authentication failures (5 or more attempts within 5 minutes), successful authentication after a failure burst, and remote SSH login to the root account.
+• Added severity prioritization and recommended analyst investigation steps to support alert triage and escalation decisions.
+• Implemented batch analysis and optional file-follow monitoring for new entries in an authorized local log file.
+• Generated JSON, CSV, and HTML outputs for review and documentation.
+• Validated the lab with 8 synthetic authentication events, generating 3 alerts (1 Critical and 2 High); all 5 unit tests passed.
+
+Tools and technologies:
+Python, Linux OpenSSH authentication logs, regular expressions, JSON, CSV, HTML, Python unittest.
+
+Project scope:
+Completed controlled portfolio lab using synthetic training events and documentation-only IP addresses. Not deployed in a production SOC and not connected to enterprise telemetry.
+
+LINKEDIN PROJECT LAUNCH POST
+
+I recently completed SentinelTrace, a Python-based SSH authentication log monitoring and threat detection lab.
+
+The problem I wanted to explore was simple: manually reviewing authentication logs can make it harder to spot repeated login failures and suspicious account access quickly.
+
+SentinelTrace parses Linux OpenSSH authentication logs and applies three rule-based detections:
+• Repeated SSH authentication failures within a defined time window
+• Successful authentication after a repeated-failure burst
+• Remote SSH login to the root account
+
+It prioritizes alerts and generates JSON, CSV, and HTML reports to support first-level SOC investigation and documentation. It also includes an optional file-follow mode for new entries in an authorized local log file.
+
+In the included controlled test scenario, the tool analyzed 8 synthetic events and generated 3 alerts: 1 Critical and 2 High. All 5 unit tests passed.
+
+This is a portfolio lab using synthetic data, not a production SIEM deployment. My next improvement areas are Windows event-log parsing, configurable detection rules, and SIEM integration in a separate lab environment.
+
+#CyberSecurity #SOCAnalyst #SecurityOperations #Python #LogAnalysis #ThreatDetection #IncidentTriage #Linux #Networking
+
+Replace the final repository reference with the actual GitHub URL after publishing the repository. Do not invent a GitHub link.

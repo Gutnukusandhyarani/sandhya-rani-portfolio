@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cybersecurity and SOC Analyst portfolio of Sandhya Rani Guntuku - IT operations, incident management, networking and security monitoring lab work.">
+  <meta name="theme-color" content="#071426">
+  <title>Sandhya Rani Guntuku | Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Home">SRG<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> CYBERSECURITY · SECURITY OPERATIONS</div>
+        <h1>Investigate.<br><span>Understand.</span><br>Secure.</h1>
+        <p class="hero-lead">IT operations professional building a career in cybersecurity, with a foundation in incident management, network troubleshooting and security monitoring.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="resume.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="#projects">Explore project <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-meta"><span>Hyderabad, India</span><span>2+ years in IT operations</span><span>Open to SOC opportunities</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Abstract cybersecurity shield illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="shield"><div class="shield-inner">✓</div></div>
+        <div class="visual-label label-top"><span class="dot cyan"></span> MONITORING</div>
+        <div class="visual-label label-bottom"><span class="dot green"></span> TRIAGE READY</div>
+        <div class="code-lines"><i></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <section id="about" class="section-wrap section-block">
+      <div class="section-heading"><span class="section-index">01 / PROFILE</span><h2>About me</h2></div>
+      <div class="about-grid">
+        <p class="about-statement">I bring an operations-first mindset to cybersecurity: understand the signal, investigate the context, document the evidence, and escalate with clarity.</p>
+        <div class="about-detail">
+          <p>My experience includes supporting a global client account in a ticket-driven, SLA-governed environment at LTM and contributing to Trust &amp; Safety operations at Amazon. I work across technical troubleshooting, case tracking, issue escalation, process quality and confidentiality.</p>
+          <p>I have foundational knowledge of TCP/IP, DNS, DHCP, VPN and LAN/WAN, along with cybersecurity training and exposure to Nmap, Wireshark and Burp Suite. My current focus is SOC monitoring, log analysis and incident triage.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section-wrap section-block">
+      <div class="section-heading"><span class="section-index">02 / CAPABILITIES</span><h2>Skills &amp; foundations</h2></div>
+      <div class="skill-grid">
+        <article class="skill-card"><div class="skill-icon">⌁</div><h3>Security operations</h3><p>Incident management · Alert triage foundations · Escalation · Root-cause analysis · SLA management</p></article>
+        <article class="skill-card"><div class="skill-icon">◎</div><h3>Networking</h3><p>TCP/IP · IPv4/IPv6 · DNS · DHCP · VPN · LAN/WAN · Routers and switches</p></article>
+        <article class="skill-card"><div class="skill-icon">⌘</div><h3>Security tools</h3><p>Nmap · Wireshark · Burp Suite <span class="muted">(training / lab exposure)</span></p></article>
+        <article class="skill-card"><div class="skill-icon">▤</div><h3>Operations</h3><p>Technical troubleshooting · Ticket lifecycle · Documentation · SAP · Cross-team coordination</p></article>
+      </div>
+    </section>
+
+    <section id="projects" class="section-wrap section-block">
+      <div class="section-heading"><span class="section-index">03 / SELECTED WORK</span><h2>Featured project</h2></div>
+      <article class="project-card">
+        <div class="project-art">
+          <div class="terminal-top"><span></span><span></span><span></span><b>sentineltrace / soc-lab</b></div>
+          <div class="terminal-body">
+            <div class="terminal-muted">$ python src/sentineltrace.py data/sample_auth.log</div>
+            <div class="terminal-ok">SentinelTrace analysis complete</div>
+            <div>Events parsed: <strong>8</strong></div>
+            <div>Alerts generated: <strong>3</strong></div>
+            <div class="terminal-alert">[CRITICAL] AUTH_SUCCESS_AFTER_FAILURES</div>
+            <div class="terminal-alert">[HIGH] SSH_BRUTE_FORCE</div>
+            <div class="terminal-alert">[HIGH] REMOTE_ROOT_LOGIN</div>
+          </div>
+        </div>
+        <div class="project-copy">
+          <div class="project-topline"><span class="project-type">PYTHON · SECURITY MONITORING · LOG ANALYSIS</span><span class="status-chip">Completed lab</span></div>
+          <h3>SentinelTrace</h3>
+          <p class="project-subtitle">Python-based SSH authentication log monitoring &amp; threat detection</p>
+          <p>Designed to reduce manual review of authentication logs by detecting repeated SSH failures, a successful login after a failure burst, and remote root access patterns. The tool prioritizes alerts and generates JSON, CSV and HTML outputs for first-level analyst review.</p>
+          <div class="project-metrics"><div><strong>8</strong><span>sample events</span></div><div><strong>3</strong><span>alerts generated</span></div><div><strong>4/4</strong><span>tests passing</span></div></div>
+          <p class="data-note">Controlled portfolio lab using synthetic authentication events and documentation-only IP addresses; not a production deployment.</p>
+          <div class="project-links"><a href="projects/sentineltrace/README.md">Project README ↗</a><a href="projects/sentineltrace/report.html">Sample triage report ↗</a><a href="sentineltrace-project.zip" download>Source ZIP ↓</a></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience" class="section-wrap section-block">
+      <div class="section-heading"><span class="section-index">04 / EXPERIENCE</span><h2>Professional journey</h2></div>
+      <div class="timeline">
+        <article class="timeline-item"><div class="timeline-date">AUG 2024 — PRESENT</div><div><h3>Software Engineer – Technical Support</h3><p class="timeline-company">LTM · Hyderabad</p><ul><li>Support a global client account in an SLA-governed technical operations environment.</li><li>Perform initial issue analysis, troubleshooting, case tracking, escalation and stakeholder updates.</li><li>Follow SOPs and quality standards while managing a high-volume support queue; use SAP for relevant account and order processes.</li></ul></div></article>
+        <article class="timeline-item"><div class="timeline-date">OCT 2023 — JAN 2024</div><div><h3>GO-AI Associate</h3><p class="timeline-company">Amazon · Trust &amp; Safety Operations</p><ul><li>Performed policy-based content annotation and quality review in a high-volume workflow.</li><li>Followed data-handling and confidentiality requirements for sensitive content.</li></ul></div></article>
+      </div>
+    </section>
+
+    <section class="section-wrap section-block education-block">
+      <div class="section-heading"><span class="section-index">05 / EDUCATION</span><h2>Education &amp; training</h2></div>
+      <div class="education-grid">
+        <div><span class="mini-label">2023</span><h3>B.Tech — Electronics &amp; Communication Engineering</h3><p>Gokaraju Rangaraju Institute of Engineering and Technology · 88%</p></div>
+        <div><span class="mini-label">AUG 2026</span><h3>Cybersecurity Certification</h3><p>Frontlines Edutech (FLM) · Networking fundamentals, ethical hacking basics and introductory security-tool exposure.</p></div>
+        <div><span class="mini-label">INTERNAL TRAINING</span><h3>Networking Fundamentals</h3><p>LTM · TCP/IP, IP addressing, DNS, DHCP, VPN, LAN/WAN and network troubleshooting.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="section-wrap contact-inner">
+        <div><span class="section-index">06 / CONTACT</span><h2>Let's connect.</h2><p>Open to entry-level SOC Analyst, Security Operations and Cybersecurity Analyst opportunities.</p></div>
+        <div class="contact-links"><a href="mailto:sandhyaraniguntuku15@gmail.com">sandhyaraniguntuku15@gmail.com ↗</a><a href="https://www.linkedin.com/in/sandhya-rani-g-859b4a22b/" target="_blank" rel="noopener">LinkedIn profile ↗</a><a href="resume.pdf" download>Download resume ↓</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>© <span id="year"></span> Sandhya Rani Guntuku</span><span>Built for learning, investigation &amp; continuous improvement.</span></footer>
+  <script src="assets/site.js"></script>
+</body>
+</html>

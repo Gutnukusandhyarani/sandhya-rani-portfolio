@@ -1,0 +1,93 @@
+LINKEDIN PROFILE COPY - SOC / CYBERSECURITY TRANSITION
+
+HEADLINE (recommended)
+Cybersecurity | Aspiring SOC Analyst | 2+ Years in IT Operations & Technical Support | Incident Management | Networking | Nmap | Wireshark
+
+ABOUT
+An effective SOC analyst needs more than tool familiarity: they need to separate signal from noise, investigate context, document evidence, and escalate clearly. My experience in IT operations has helped me build these habits through structured troubleshooting, incident tracking, and SLA-driven support.
+
+What I bring:
+• IT Operations: 2+ years supporting a global client account, managing technical cases from initial analysis through documentation, resolution, or escalation.
+• Networking Fundamentals: TCP/IP, IPv4/IPv6, DNS, DHCP, VPN, LAN/WAN, routers, switches, and network troubleshooting.
+• Trust & Safety Operations: Experience at Amazon with policy-based content reviews, quality checks, data handling, and confidentiality.
+• Practical Security Learning: Cybersecurity training covering networking fundamentals and ethical hacking basics, with exposure to Nmap, Wireshark, and Burp Suite. Built SentinelTrace, a Python-based lab for SSH authentication-log monitoring and rule-based alert triage.
+
+I am focused on growing in security monitoring, log analysis, incident investigation, and first-level SOC operations.
+
+Open to Opportunities: SOC Analyst | SOC Analyst - L1 | Security Operations Analyst | Cybersecurity Analyst | Information Security Analyst.
+
+Hyderabad, India | Open to opportunities across India and remote roles.
+
+EXPERIENCE - LTM
+Title: Software Engineer (Technical Support) - use the exact official designation required by the employer.
+Company: LTM
+Dates: August 2024 - Present
+Suggested bullets:
+• Support a global client account in a ticket-driven, SLA-governed technical operations environment, monitoring cases from intake through resolution.
+• Perform initial issue analysis and troubleshooting, gathering relevant details and identifying root causes in line with defined procedures.
+• Track cases through their lifecycle, coordinate with relevant teams, document findings, and follow up through resolution or escalation.
+• Escalate complex or specialized issues with supporting context while following SOPs and quality standards in a high-volume queue.
+• Handle account, subscription, licensing, payment, refund and order-related queries, including SAP order processing.
+
+EXPERIENCE - AMAZON
+Title: GO-AI Associate (use the official title shown on employment records)
+Dates: October 2023 - January 2024
+Suggested bullets:
+• Performed content annotation and quality reviews supporting Trust & Safety operations, applying defined policy guidelines in a high-volume workflow.
+• Maintained review accuracy and process integrity while following data-handling and confidentiality requirements for sensitive content.
+
+PROJECT - ADD AFTER REVIEWING THE CODE AND RUNNING THE TESTS
+Name: SentinelTrace - Python-Based SSH Authentication Log Monitoring & Threat Detection
+Date: November 2026
+Description:
+Built a lightweight Python tool to parse Linux OpenSSH authentication logs and identify suspicious login patterns for first-level SOC triage.
+• Implemented rule-based detections for repeated SSH authentication failures (5+ attempts within 5 minutes), successful login after a failure burst, and remote root-account login.
+• Added severity prioritization, investigation recommendations, batch analysis, and file-follow monitoring.
+• Generated JSON, CSV, and HTML reports for analyst review.
+• Tested against 8 synthetic authentication events: 3 alerts generated (1 Critical, 2 High); 5 unit tests passing.
+Tools: Python, Linux OpenSSH logs, regular expressions, JSON, CSV, HTML, unittest.
+Note: Controlled portfolio lab using synthetic data; not a production SIEM deployment.
+
+TOP 15 SKILLS
+1. Incident Management (pin)
+2. Network Security (pin)
+3. Network Troubleshooting (pin)
+4. TCP/IP
+5. DNS
+6. DHCP
+7. Nmap
+8. Wireshark
+9. Linux
+10. Log Analysis
+11. Python
+12. Security Monitoring
+13. Root Cause Analysis
+14. Escalation Management
+15. SLA Management
+
+OPEN TO WORK - 5 TITLES
+SOC Analyst
+SOC Analyst - L1
+Security Operations Analyst
+Cybersecurity Analyst
+Information Security Analyst
+
+Locations: Greater Hyderabad Area / Hyderabad; India - Remote. Add Bengaluru, Pune or Chennai only if relocation is realistic.
+Workplace: On-site, Hybrid, Remote (only those acceptable).
+Employment: Full-time.
+Visibility: Recruiters only.
+
+FEATURED SECTION - PRIORITY ORDER
+1. SOC Analyst CV - PDF
+2. SentinelTrace project repository (GitHub link after upload)
+3. SentinelTrace sample triage report / case study
+4. Frontlines Edutech cybersecurity credential (only the actual certificate or verifiable badge)
+
+PROFILE CLEANUP NOTES
+- Replace current headline phrase "2+ Years in Software Engineer"; it is grammatically incorrect and overstates software-development experience based on the duties shown in the resume.
+- LinkedIn export shows the current LTM title as "Software Engineer" while the resume says "Software Engineer - Technical Support". Use the official title and add the functional qualifier if accurate.
+- LinkedIn export shows Amazon as "Associate"; resume says "GO-AI Associate". Use the official title from employment records.
+- The current top skills include "Incident Response". Keep it only if there is actual security incident-response experience; otherwise use Incident Management.
+- The resume and latest LinkedIn PDF show different email addresses. Confirm one preferred public email and use it consistently.
+- Keep Burp Suite as training/lab exposure until there are practical examples to discuss.
+- Do not add OAuth/JWT implementation, CI/CD security, cloud security engineering, or AppSec experience unless there is genuine evidence.
