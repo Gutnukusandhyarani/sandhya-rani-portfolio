@@ -30,7 +30,9 @@ function Counter({ value, decimals, suffix }: { value: number; decimals: number;
     if (!inView || reduce) return;
     const o = { v: 0 };
     const tw = gsap.to(o, { v: value, duration: 1.6, ease: 'power3.out', onUpdate: () => setN(o.v) });
-    return () => tw.kill();
+    return () => {
+  tw.kill();
+};
   }, [inView, value, reduce]);
   return <span ref={ref} className="tabular-nums">{n.toFixed(decimals)}{suffix}</span>;
 }
