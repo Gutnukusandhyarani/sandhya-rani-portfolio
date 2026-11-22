@@ -1,38 +1,33 @@
-# Sandhya Rani Guntuku - Cybersecurity Portfolio Website
+# Sandhyarani Guntuku — Defensive Security Portfolio
 
-This is a responsive, static portfolio site. It can be opened locally by double-clicking `index.html` or hosted with GitHub Pages.
+React + TypeScript portfolio presenting two connected defensive-security projects: SentinelOps and SigmaForge.
 
-## Included
+## Published project repositories
 
-- `index.html` - portfolio landing page
-- `assets/` - stylesheet and small JavaScript helper
-- `resume.pdf` and `resume.docx` - downloadable CV copies
-- `sentineltrace-project.zip` - complete project repository bundle
-- `projects/sentineltrace/` - project README, case study, demo report, source file and sample data
-- `linkedin-cover.png` - generated LinkedIn banner image
-- `LinkedIn_Profile_Copy.txt` and `LinkedIn_Project_Copy.txt` - editable LinkedIn profile and project copy
+- [SentinelOps — Local Endpoint Monitoring & SIEM Lab](https://github.com/Gutnukusandhyarani/SentinelOps)
+- [SigmaForge — Detection-as-Code Workbench](https://github.com/Gutnukusandhyarani/SigmaForge)
 
-## Publish with GitHub Pages
+The project cards link directly to these public repositories.
 
-1. Create a GitHub repository named `sandhya-rani-portfolio` (or another available name).
-2. Upload the **contents** of this folder into the repository root. Do not upload the parent folder as an extra nested directory.
-3. Open the repository's **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select branch `main` and folder `/ (root)`, then save.
-6. After GitHub Pages finishes publishing, the site address will normally be:
+## Run locally
 
-   `https://YOUR-GITHUB-USERNAME.github.io/sandhya-rani-portfolio/`
+```bash
+npm ci
+npm run dev
+```
 
-Replace `YOUR-GITHUB-USERNAME` with the actual GitHub username. The address is a template until the repository exists and Pages is enabled; it is not a live URL yet.
+## Personal details
 
-## Before making it public
+Edit `src/data/portfolio.ts`. The downloadable resume is stored at `public/resume.pdf`.
 
-- Confirm which email address should be public. The source resume uses `sandhyaraniguntuku15@gmail.com`, while the latest LinkedIn PDF shows `guntukusandhyarani23@gmail.com`.
-- Confirm the display name matches official documents.
-- Review the phone number and LinkedIn URL.
-- Use only sanitized sample logs. Never publish company/customer logs, credentials, access tokens, screenshots of internal systems, or confidential details.
-- Review the project code and run the included unit tests before presenting the work as your own hands-on project.
+## Dashboard availability
 
-## Local preview
+Read [DASHBOARD-REALTIME-STATUS.md](./DASHBOARD-REALTIME-STATUS.md) before describing either dashboard as publicly live. Both current dashboards are local Python services, not publicly hosted dashboards. Their localhost addresses are displayed as setup information, not as public links. No synthetic data is presented as live telemetry.
 
-Open `index.html` in a modern browser. No build tools, external libraries or hosting account are required for local preview.
+## Publish
+
+The repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds the Vite app and deploys the `dist` directory to GitHub Pages when changes reach `main`. In the repository's **Settings → Pages**, set the source to **GitHub Actions**.
+
+Vercel is also supported as an alternative: import this GitHub repository, use Vite, `npm ci`, `npm run build`, and `dist`.
+
+The current SentinelOps collector and SQLite API must not be exposed directly to the public internet.
