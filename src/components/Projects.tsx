@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, ExternalLink, Github, Lock, Terminal, X } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Github, Lock, Terminal, X } from 'lucide-react';
 import { projects, type Project } from '../data/portfolio';
 import { lockScroll } from '../lib/scroll';
 import SectionLabel from './ui/SectionLabel';
