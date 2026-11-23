@@ -1,22 +1,20 @@
 # Sandhyarani Guntuku — Defensive Security Portfolio
 
-React + TypeScript portfolio showcasing three connected defensive-security projects: SentinelOps, SigmaForge and SentinelTrace.
+React + TypeScript portfolio showcasing two connected defensive-security projects: SentinelOps and SigmaForge.
 
 ## Project dashboards
 
-Open the [central project dashboard directory](https://sandhya-rani-portfolio.vercel.app/projects/) to access all three project interfaces.
+Open the [central project dashboard directory](https://sandhya-rani-portfolio.vercel.app/projects/) to access both project interfaces.
 
 - [SentinelOps — hosted endpoint monitoring and SIEM lab](https://sentinelops-git-vercel-supabase-sandhya-6e9f.vercel.app/)
 - [SigmaForge — hosted detection-as-code workbench](https://sigma-forge-mu.vercel.app/)
-- [SentinelTrace — interactive SOC training dashboard](https://sandhya-rani-portfolio.vercel.app/sentineltrace/dashboard/)
 
-Each dashboard has a distinct scope. SentinelOps displays aggregate hosted endpoint telemetry publicly and requires analyst sign-in for detailed records. SigmaForge displays repository rules and fixture-based regression results. SentinelTrace uses synthetic training data and is not connected to a live SIEM.
+Each dashboard has a distinct scope. SentinelOps displays aggregate hosted endpoint telemetry publicly and requires analyst sign-in for detailed records. SigmaForge displays repository rules and fixture-based regression results; it is not connected to live endpoint telemetry.
 
 ## Published project repositories
 
 - [SentinelOps](https://github.com/Gutnukusandhyarani/SentinelOps)
 - [SigmaForge](https://github.com/Gutnukusandhyarani/SigmaForge)
-- [SentinelTrace](https://github.com/Gutnukusandhyarani/SentinelTrace)
 
 ## Run the portfolio locally
 
@@ -31,7 +29,7 @@ Edit \`src/data/portfolio.ts\`. The downloadable resume is stored at \`public/re
 
 ## Project evidence and data boundaries
 
-Read [DASHBOARD-REALTIME-STATUS.md](./DASHBOARD-REALTIME-STATUS.md) before describing project dashboards. The portfolio keeps hosted endpoint telemetry, repository rule fixtures and synthetic training data clearly separated. Never describe sample or mock records as production alerts, a live SIEM connection or measured AI accuracy.
+Read [DASHBOARD-REALTIME-STATUS.md](./DASHBOARD-REALTIME-STATUS.md) before describing project dashboards. The portfolio keeps hosted endpoint telemetry and repository rule fixtures clearly distinguished. Never describe sample or mock records as production alerts, a live SIEM connection or measured AI accuracy.
 
 ## Publish
 
