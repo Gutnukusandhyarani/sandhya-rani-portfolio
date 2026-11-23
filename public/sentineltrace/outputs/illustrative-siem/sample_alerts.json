@@ -1,0 +1,50 @@
+{
+  "evidence_label": "ILLUSTRATIVE SIEM OUTPUT \u2014 synthetic training records, not exported from Splunk or Sentinel",
+  "alerts": [
+    {
+      "rule_id": "ST-DET-01",
+      "severity": "CRITICAL",
+      "host": "lab-linux-01",
+      "user": "analyst",
+      "source": "203.0.113.45",
+      "event": "5 SSH failures followed by success",
+      "status": "NEEDS_VALIDATION"
+    },
+    {
+      "rule_id": "ST-DET-02",
+      "severity": "HIGH",
+      "host": "LAB-WIN-07",
+      "user": "svc_update2",
+      "source": "local account event",
+      "event": "New local account created (4720)",
+      "status": "ESCALATE"
+    },
+    {
+      "rule_id": "ST-DET-03",
+      "severity": "HIGH",
+      "host": "LAB-WIN-07",
+      "user": "lab-user",
+      "source": "Sysmon Event 1",
+      "event": "PowerShell launched with encoded-command switch",
+      "status": "NEEDS_VALIDATION"
+    },
+    {
+      "rule_id": "ST-DET-04",
+      "severity": "HIGH",
+      "host": "LAB-WIN-07",
+      "user": "SYSTEM",
+      "source": "Security 4698",
+      "event": "Scheduled task created with user-writable script action",
+      "status": "ESCALATE"
+    },
+    {
+      "rule_id": "ST-DET-05",
+      "severity": "HIGH",
+      "host": "LAB-WIN-07",
+      "user": "lab-user",
+      "source": "Sysmon Event 10",
+      "event": "Unusual process accessed lsass.exe",
+      "status": "ESCALATE"
+    }
+  ]
+}
