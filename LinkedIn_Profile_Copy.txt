@@ -87,7 +87,8 @@ Visibility: Recruiters only.
 
 FEATURED SECTION - PRIORITY ORDER
 1. SOC Analyst CV - PDF
-2.  project repository (GitHub link after upload)
+2. SentinelOps hosted dashboard and analyst-console overview
+3. SigmaForge hosted detection workbench and GitHub repository
 4. Frontlines Edutech cybersecurity credential (only the actual certificate or verifiable badge)
 
 PROFILE CLEANUP NOTES
