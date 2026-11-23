@@ -81,7 +81,7 @@ export type Project = {
   dashboardPort?: string;
   runCommand?: string;
   collectorCommand?: string;
-  motif: 'scan' | 'flow' | 'tenants' | 'trace';
+  motif: 'scan' | 'flow' | 'tenants';
 };
 
 export const projects: Project[] = [
@@ -160,39 +160,7 @@ export const projects: Project[] = [
     collectorCommand: '',
     motif: 'flow',
   },
-  {
-    id: 'sentineltrace',
-    index: '03',
-    title: 'SentinelTrace',
-    year: '2026',
-    kind: 'SOC Monitoring · AI-Assisted Triage',
-    summary: 'A reproducible SOC analyst learning lab that combines Python SSH log analysis, five Linux/Windows detection use cases, SIEM query examples, synthetic investigations and a human-reviewed triage-copilot prototype.',
-    stack: ['Python', 'Splunk SPL', 'Microsoft Sentinel KQL', 'Sigma YAML', 'MITRE ATT&CK', 'Ollama', 'HTML', 'JavaScript'],
-    contribution: [
-      'Extended a Python SSH authentication-log analyzer and documented detection scenarios for authentication abuse, account creation, encoded PowerShell, scheduled-task creation and unusual LSASS process access.',
-      'Authored illustrative Splunk SPL, Microsoft Sentinel KQL and Sigma YAML examples with ATT&CK mappings, false-positive considerations and L1 investigation guidance.',
-      'Built a constrained triage-copilot prototype with IOC-pattern extraction, strict JSON validation, a deterministic mock provider and an optional local Ollama adapter; final decisions remain human-controlled.',
-    ],
-    features: [
-      'Python SSH authentication parsing and report export',
-      'Five Linux and Windows detection use cases',
-      'Splunk SPL, Sentinel KQL and Sigma YAML examples',
-      'Three synthetic investigation walkthroughs and three L1 playbooks',
-      'Interactive SOC dashboard with searchable alerts and SSH timeline',
-      'Offline triage-copilot prototype with optional local model adapter',
-    ],
-    metrics: [
-      { value: '5', label: 'Auth and endpoint detection use cases' },
-      { value: '3', label: 'SIEM query formats represented' },
-      { value: '3', label: 'Synthetic investigation walkthroughs' },
-      { value: '3', label: 'L1 response playbooks' },
-    ],
-    github: 'https://github.com/Gutnukusandhyarani/SentinelTrace',
-    live: '/sentineltrace/dashboard/',
-    dashboardUrl: '/sentineltrace/dashboard/',
-    dashboardDescription: 'Static interactive training dashboard backed by repository fixtures. SIEM alerts and copilot suggestions are synthetic; no production SIEM or live endpoint feed is connected.',
-    motif: 'trace',
-  },
+
 ]; 
 
 export const workflow = [
