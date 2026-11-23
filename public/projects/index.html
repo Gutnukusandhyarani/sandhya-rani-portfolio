@@ -1,68 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#080808">
-<meta name="description" content="Explore Sandhyarani Guntuku's defensive security dashboards: SentinelOps, SigmaForge and SentinelTrace.">
+<meta name="description" content="Explore Sandhyarani Guntuku's defensive-security dashboards: SentinelOps and SigmaForge.">
 <title>Project Dashboards | Sandhyarani Guntuku</title>
 <style>
 :root{color-scheme:dark;--bg:#080808;--panel:#111;--line:#292929;--muted:#9b9b9b;--text:#f4f4f4;--accent:#c4f06a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 0%,#182012 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:1240px;margin:auto;padding:0 28px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}.brand{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--text)}.brand span{color:var(--accent)}.top a.back{color:#bbb;text-decoration:none;font-size:12px}.hero{padding:70px 0 48px}.eyebrow{font:700 10px/1.4 ui-monospace,monospace;letter-spacing:.18em;color:#a8b28f;text-transform:uppercase}.hero h1{font-size:clamp(38px,7vw,76px);letter-spacing:-.065em;line-height:.96;max-width:850px;margin:18px 0}.hero h1 em{font-family:Georgia,serif;font-weight:400;color:var(--accent)}.hero p{max-width:620px;color:var(--muted);font-size:16px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;padding-bottom:48px}.card{display:flex;flex-direction:column;min-height:400px;padding:24px;background:linear-gradient(145deg,#171717,#0e0e0e);border:1px solid var(--line);border-radius:14px;transition:transform .25s,border-color .25s}.card:hover{transform:translateY(-4px);border-color:#555}.card-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.number{font:12px ui-monospace,monospace;color:#777}.status{font:700 9px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #3c4a2a;border-radius:30px;padding:6px 9px;color:var(--accent)}.status.lab{border-color:#55452a;color:#e0c48a}.status.demo{border-color:#3f3e5a;color:#b6b2ef}.card h2{font-size:29px;letter-spacing:-.04em;margin:25px 0 8px}.type{font:10px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#9a9a9a}.card p{color:#b4b4b4;font-size:13px;margin:18px 0}.facts{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}.facts span{font:10px ui-monospace,monospace;border:1px solid #333;border-radius:30px;padding:6px 9px;color:#c8c8c8}.note{margin-top:17px;padding:12px;background:#0a0a0a;border-left:2px solid #555;color:#a1a1a1;font-size:11px}.note strong{color:#dedede}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:auto;padding-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:0 13px;text-decoration:none;border:1px solid #555;border-radius:6px;color:var(--text);font-size:11px;font-weight:800}.btn.primary{background:var(--accent);border-color:var(--accent);color:#101010}.btn:hover{filter:brightness(1.1)}.foot{display:flex;justify-content:space-between;gap:18px;border-top:1px solid var(--line);padding:22px 0 32px;color:#7e7e7e;font-size:11px}.foot a{color:#c8dca1;text-decoration:none}.privacy{color:#888;font-size:11px;max-width:760px;margin:-18px 0 35px}@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.wrap{padding:0 15px}.top{padding:18px 0}.hero{padding:50px 0 30px}.grid{grid-template-columns:1fr}.card{min-height:360px}.foot{display:block}.foot div+div{margin-top:8px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 0%,#182012 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:1120px;margin:auto;padding:0 28px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}.brand{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--text)}.brand span{color:var(--accent)}.top a.back{color:#bbb;text-decoration:none;font-size:12px}.hero{padding:70px 0 48px}.eyebrow{font:700 10px/1.4 ui-monospace,monospace;letter-spacing:.18em;color:#a8b28f;text-transform:uppercase}.hero h1{font-size:clamp(38px,7vw,76px);letter-spacing:-.065em;line-height:.96;max-width:850px;margin:18px 0}.hero h1 em{font-family:Georgia,serif;font-weight:400;color:var(--accent)}.hero p{max-width:620px;color:var(--muted);font-size:16px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;padding-bottom:48px}.card{display:flex;flex-direction:column;min-height:390px;padding:24px;background:linear-gradient(145deg,#171717,#0e0e0e);border:1px solid var(--line);border-radius:14px;transition:transform .25s,border-color .25s}.card:hover{transform:translateY(-4px);border-color:#555}.card-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.number{font:12px ui-monospace,monospace;color:#777}.status{font:700 9px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #3c4a2a;border-radius:30px;padding:6px 9px;color:var(--accent)}.status.lab{border-color:#55452a;color:#e0c48a}.card h2{font-size:29px;letter-spacing:-.04em;margin:25px 0 8px}.type{font:10px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#9a9a9a}.card p{color:#b4b4b4;font-size:13px;margin:18px 0}.facts{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}.facts span{font:10px ui-monospace,monospace;border:1px solid #333;border-radius:30px;padding:6px 9px;color:#c8c8c8}.note{margin-top:17px;padding:12px;background:#0a0a0a;border-left:2px solid #555;color:#a1a1a1;font-size:11px}.note strong{color:#dedede}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:auto;padding-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:0 13px;text-decoration:none;border:1px solid #555;border-radius:6px;color:var(--text);font-size:11px;font-weight:800}.btn.primary{background:var(--accent);border-color:var(--accent);color:#101010}.btn:hover{filter:brightness(1.1)}.foot{display:flex;justify-content:space-between;gap:18px;border-top:1px solid var(--line);padding:22px 0 32px;color:#7e7e7e;font-size:11px}.foot a{color:#c8dca1;text-decoration:none}.privacy{color:#888;font-size:11px;max-width:760px;margin:-18px 0 35px}@media(max-width:700px){.wrap{padding:0 15px}.top{padding:18px 0}.hero{padding:50px 0 30px}.grid{grid-template-columns:1fr}.card{min-height:350px}.foot{display:block}.foot div+div{margin-top:8px}}
 </style>
 </head>
-<body>
-<div class="wrap">
-<header class="top">
-  <a class="brand" href="/">S<span>·</span>G / Portfolio</a>
-  <a class="back" href="/">← Back to portfolio</a>
-</header>
-<section class="hero">
-  <div class="eyebrow">PROJECT INDEX / SECURITY ENGINEERING</div>
-  <h1>Three systems.<br><em>Three dashboards.</em></h1>
-  <p>A central entry point to the deployed project interfaces. Each dashboard has a different purpose and clearly states whether it uses hosted endpoint telemetry, repository rule fixtures or synthetic training records.</p>
-</section>
+<body><div class="wrap">
+<header class="top"><a class="brand" href="/">S<span>·</span>G / Portfolio</a><a class="back" href="/">← Back to portfolio</a></header>
+<section class="hero"><div class="eyebrow">PROJECT INDEX / SECURITY ENGINEERING</div><h1>Two systems.<br><em>Two dashboards.</em></h1><p>A central entry point to the deployed project interfaces. Each dashboard has a different purpose and clearly states whether it uses hosted endpoint telemetry or repository rule fixtures.</p></section>
 <main class="grid">
-  <article class="card">
-    <div class="card-head"><span class="number">01 / SENTINELOPS</span><span class="status">Hosted telemetry</span></div>
-    <h2>SentinelOps</h2>
-    <div class="type">Endpoint Monitoring · SIEM Lab</div>
-    <p>A hosted endpoint monitoring workspace that ingests authorized Windows event records, normalizes telemetry, runs detections and displays privacy-filtered operational metrics.</p>
-    <div class="facts"><span>Python</span><span>Supabase</span><span>Vercel</span><span>Windows Event Logs</span></div>
-    <div class="note"><strong>Data boundary:</strong> the public dashboard contains aggregate metrics only. Detailed alert evidence and event records require analyst sign-in.</div>
-    <div class="actions">
-      <a class="btn primary" href="https://sentinelops-git-vercel-supabase-sandhya-6e9f.vercel.app/">Open dashboard ↗</a>
-      <a class="btn" href="https://sentinelops-git-vercel-supabase-sandhya-6e9f.vercel.app/analyst.html">Analyst console ↗</a>
-      <a class="btn" href="https://github.com/Gutnukusandhyarani/SentinelOps">Source ↗</a>
-    </div>
-  </article>
-  <article class="card">
-    <div class="card-head"><span class="number">02 / SIGMAFORGE</span><span class="status lab">Hosted workbench</span></div>
-    <h2>SigmaForge</h2>
-    <div class="type">Detection-as-Code · Rule Engineering</div>
-    <p>A read-only detection workbench for inspecting YAML rules, reviewing ATT&amp;CK tags, checking regression fixtures and compiling supported conditions into SIEM query formats.</p>
-    <div class="facts"><span>6 valid rules</span><span>8/8 fixture tests</span><span>Splunk SPL</span><span>Sentinel KQL</span><span>Elastic</span></div>
-    <div class="note"><strong>Data boundary:</strong> this is a rule-engine workbench. The displayed results come from repository rules and test fixtures, not live endpoint telemetry.</div>
-    <div class="actions">
-      <a class="btn primary" href="https://sigma-forge-mu.vercel.app/">Open dashboard ↗</a>
-      <a class="btn" href="https://github.com/Gutnukusandhyarani/SigmaForge">Source ↗</a>
-    </div>
-  </article>
-  <article class="card">
-    <div class="card-head"><span class="number">03 / SENTINELTRACE</span><span class="status demo">Training lab</span></div>
-    <h2>SentinelTrace</h2>
-    <div class="type">SOC Monitoring · AI-Assisted Triage</div>
-    <p>An interactive SOC learning workspace covering SSH event analysis, five detection scenarios, query examples, synthetic investigations and a human-reviewed triage-copilot prototype.</p>
-    <div class="facts"><span>Python</span><span>ATT&amp;CK</span><span>Splunk</span><span>KQL</span><span>Sigma</span><span>Ollama adapter</span></div>
-    <div class="note"><strong>Data boundary:</strong> all dashboard alert records, copilot suggestions and evaluation fixtures are synthetic training data. It is not connected to a SIEM.</div>
-    <div class="actions">
-      <a class="btn primary" href="/sentineltrace/dashboard/">Open dashboard ↗</a>
-      <a class="btn" href="https://github.com/Gutnukusandhyarani/SentinelTrace">Source ↗</a>
-    </div>
-  </article>
+<article class="card">
+<div class="card-head"><span class="number">01 / SENTINELOPS</span><span class="status">Hosted telemetry</span></div>
+<h2>SentinelOps</h2><div class="type">Endpoint Monitoring · SIEM Lab</div>
+<p>A hosted endpoint monitoring workspace that ingests authorized Windows event records, normalizes telemetry, runs detections and displays privacy-filtered operational metrics.</p>
+<div class="facts"><span>Python</span><span>Supabase</span><span>Vercel</span><span>Windows Event Logs</span></div>
+<div class="note"><strong>Data boundary:</strong> the public dashboard contains aggregate metrics only. Detailed alert evidence and event records require analyst sign-in.</div>
+<div class="actions"><a class="btn primary" href="https://sentinelops-git-vercel-supabase-sandhya-6e9f.vercel.app/">Open dashboard ↗</a><a class="btn" href="https://sentinelops-git-vercel-supabase-sandhya-6e9f.vercel.app/analyst.html">Analyst console ↗</a><a class="btn" href="https://github.com/Gutnukusandhyarani/SentinelOps">Source ↗</a></div>
+</article>
+<article class="card">
+<div class="card-head"><span class="number">02 / SIGMAFORGE</span><span class="status lab">Hosted workbench</span></div>
+<h2>SigmaForge</h2><div class="type">Detection-as-Code · Rule Engineering</div>
+<p>A read-only detection workbench for inspecting YAML rules, reviewing ATT&amp;CK tags, checking regression fixtures and compiling supported conditions into SIEM query formats.</p>
+<div class="facts"><span>6 valid rules</span><span>8/8 fixture tests</span><span>Splunk SPL</span><span>Sentinel KQL</span><span>Elastic</span></div>
+<div class="note"><strong>Data boundary:</strong> this is a rule-engine workbench. The displayed results come from repository rules and test fixtures, not live endpoint telemetry.</div>
+<div class="actions"><a class="btn primary" href="https://sigma-forge-mu.vercel.app/">Open dashboard ↗</a><a class="btn" href="https://github.com/Gutnukusandhyarani/SigmaForge">Source ↗</a></div>
+</article>
 </main>
 <p class="privacy">Portfolio note: dashboard access does not imply production deployment of every integration. SIEM query examples must be tested against an authorized Splunk or Microsoft Sentinel workspace before operational use.</p>
 <footer class="foot"><div>Sandhyarani Guntuku · Project dashboard index</div><div><a href="https://github.com/Gutnukusandhyarani">GitHub</a> · <a href="https://www.linkedin.com/in/sandhya-rani-g-859b4a22b">LinkedIn</a></div></footer>
-</div>
-</body>
-</html>
+</div></body></html>
