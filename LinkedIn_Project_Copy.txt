@@ -1,4 +1,4 @@
-LINKEDIN PROJECT ENTRIES — READY TO ADAPT
+LINKEDIN PROJECT ENTRIES — SENTINELOPS AND SIGMAFORGE
 
 PROJECT 1
 Name: SentinelOps | Hosted Endpoint Monitoring & SIEM Lab
@@ -37,41 +37,21 @@ Highlights:
 Verified checkpoint:
 The deployed API reported 6 rules, 6 valid rules and 8/8 passing regression cases on 23 November 2026. These results apply to repository fixtures, not live endpoint telemetry. Generated queries must be validated in the destination SIEM.
 
-PROJECT 3
-Name: SentinelTrace | SOC Monitoring, Detection Engineering & AI-Assisted Triage
-Associated with: Independent Portfolio Project
-Repository: https://github.com/Gutnukusandhyarani/SentinelTrace
-Dashboard: https://sandhya-rani-portfolio.vercel.app/sentineltrace/dashboard/
-
-Description:
-Extended a Python SSH authentication-log analyzer into a reproducible SOC analyst learning lab covering Linux and Windows detection scenarios, SIEM query examples, MITRE ATT&CK mapping, synthetic investigation walkthroughs, L1 response playbooks and a human-reviewed triage-copilot prototype.
-
-Highlights:
-• Authored five detection use cases for authentication abuse, account creation, encoded PowerShell, scheduled-task creation and unusual LSASS process access.
-• Created illustrative Splunk SPL, Microsoft Sentinel KQL and Sigma YAML examples with false-positive considerations.
-• Added three synthetic investigation walkthroughs and three L1 response playbooks.
-• Built a triage-copilot prototype with offline IOC-pattern extraction, strict JSON validation, deterministic mock mode and an optional local Ollama adapter.
-• Published an interactive static dashboard with searchable/filterable training records and explicit synthetic-data notices.
-
-Scope note:
-The dashboard, SIEM alert examples and copilot suggestions use synthetic training data. The deterministic mock fixture check is not an AI accuracy result. The SIEM queries have not been validated against a connected production SIEM workspace.
-
 LINKEDIN PORTFOLIO LAUNCH POST
 
-I've been building a small portfolio of defensive-security projects to practise different parts of the security operations workflow — from collecting endpoint telemetry to engineering and reviewing detections.
+I've been building a portfolio of defensive-security projects to practise different parts of the security operations workflow — from collecting endpoint telemetry to engineering and validating detections.
 
-The portfolio now brings together three projects:
+The portfolio now brings together two connected projects:
 
 • SentinelOps — a hosted endpoint-monitoring lab with an authorized Windows collector, event normalization, rule-based detections, Supabase persistence and a privacy-filtered dashboard.
 • SigmaForge — a detection-as-code workbench for YAML rule validation, regression testing, ATT&CK mapping and query generation for Splunk, Microsoft Sentinel and Elastic.
-• SentinelTrace — a SOC learning lab combining SSH log analysis, detection examples, investigation walkthroughs, response playbooks and a human-reviewed triage-copilot prototype.
 
-Each project has a separate dashboard and source repository. The dashboards also make their data boundaries clear: SentinelOps displays hosted endpoint telemetry aggregates, SigmaForge uses repository rule fixtures, and SentinelTrace uses synthetic training records.
+Each project has its own dashboard and source repository. The dashboards also make their data boundaries clear: SentinelOps displays hosted endpoint telemetry aggregates, while SigmaForge uses repository rule fixtures.
 
 Portfolio and project dashboards:
 https://sandhya-rani-portfolio.vercel.app/projects/
 
-I’m continuing to improve the investigation workflow, deployment checks and validation against authorized lab environments.
+I'm continuing to improve the investigation workflow, deployment checks and validation against authorized lab environments.
 
 #CyberSecurity #SecurityOperations #SOCAnalyst #Python #DetectionEngineering #MITREATTACK #SIEM #Splunk #MicrosoftSentinel #CloudSecurity
 
@@ -85,23 +65,18 @@ SigmaForge | Detection-as-Code Workbench
 • Developed a Python workbench to validate YAML detection rules, parse supported condition logic, identify rule-quality issues and map ATT&CK technique metadata.
 • Implemented regression-fixture evaluation and query generation for Splunk SPL, Microsoft Sentinel KQL and Elastic syntax; the hosted API reported 6/6 valid rules and 8/8 passing fixture cases at the 23 November 2026 checkpoint.
 
-SentinelTrace | SOC Monitoring & AI-Assisted Triage Lab
-• Extended a Python SSH authentication analyzer with five Linux/Windows detection use cases, ATT&CK mappings, illustrative SPL/KQL/Sigma examples and L1 investigation guidance.
-• Built a human-reviewed triage-copilot prototype with offline IOC extraction, constrained JSON validation, deterministic mock mode and an optional local Ollama adapter; published a searchable static dashboard using synthetic training records.
-
 GITHUB PROFILE / ABOUT SUMMARY
 
-Building defensive-security projects across endpoint monitoring, detection engineering and analyst workflows. Projects include SentinelOps (Python, PowerShell, Vercel, Supabase), SigmaForge (YAML, ATT&CK, Splunk SPL, Sentinel KQL, Elastic) and SentinelTrace (Python log analysis, SIEM examples and human-reviewed AI-assisted triage).
+Building defensive-security projects across endpoint monitoring and detection engineering. Projects include SentinelOps (Python, PowerShell, Vercel, Supabase) and SigmaForge (YAML, ATT&CK, Splunk SPL, Sentinel KQL and Elastic).
 
 ATS KEYWORDS
 
-Python · PowerShell · Windows Event Logs · Linux Authentication Logs · SIEM · Security Operations · Log Analysis · Event Normalization · Detection Engineering · YAML · MITRE ATT&CK · Splunk SPL · Microsoft Sentinel KQL · Elastic Query · Alert Triage · Incident Investigation · REST APIs · Supabase · Vercel · JSON · Regression Testing · Authentication · API Security · AI-Assisted Triage · Ollama
+Python · PowerShell · Windows Event Logs · Linux Authentication Logs · SIEM · Security Operations · Log Analysis · Event Normalization · Detection Engineering · YAML · MITRE ATT&CK · Splunk SPL · Microsoft Sentinel KQL · Elastic Query · Alert Triage · Incident Investigation · REST APIs · Supabase · Vercel · JSON · Regression Testing · API Security
 
 CANDIDATE ACCURACY CHECKLIST
 
 • Describe SentinelOps as a portfolio/lab deployment, not an enterprise production SOC.
 • Do not claim the analyst login, saved triage or scheduled startup has been fully end-to-end tested until those checks are completed.
 • Describe the SentinelOps public dashboard as aggregate-only; detailed records need analyst sign-in.
-• Describe SigmaForge's test results as repository fixture results, not live SIEM detections.
-• Describe SentinelTrace alert records and copilot outputs as synthetic/deterministic examples, not live SOC or measured LLM accuracy.
-• Do not claim Splunk or Microsoft Sentinel deployment unless you personally connect and validate the queries in an authorized workspace.
+• Describe SigmaForge's test results as repository fixture results, not detections deployed in Splunk or Sentinel.
+• Do not claim production deployment, customer impact, MTTD/MTTR reduction, measured AI accuracy or automated containment without separate evidence.
