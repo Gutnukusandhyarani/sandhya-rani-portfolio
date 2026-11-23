@@ -9,7 +9,7 @@ import Reveal from './ui/Reveal';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-function ProjectCard({ p, i, onOpen }: { p: Project; i: number; onOpen: () => void }) {
+function ProjectCard({ p, i, onOpen, onOpenDashboard }: { p: Project; i: number; onOpen: () => void; onOpenDashboard: () => void }) {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLButtonElement>(null);
   const rx = useMotionValue(0);
@@ -48,18 +48,18 @@ function ProjectCard({ p, i, onOpen }: { p: Project; i: number; onOpen: () => vo
           <motion.button
             ref={ref}
             type="button"
-            onClick={onOpen}
+            onClick={onOpenDashboard}
             onPointerMove={onMove}
             onPointerEnter={() => setHover(true)}
             onPointerLeave={onLeave}
             data-cursor="view"
-            data-cursor-label="Open"
-            aria-label={`Open case study: ${p.title}`}
+            data-cursor-label="Dashboard"
+            aria-label={`Open project dashboard: ${p.title}`}
             style={{ rotateX: srx, rotateY: sry, transformStyle: 'preserve-3d' }}
             className="group relative block aspect-[16/11] w-full overflow-hidden rounded-[3px] border border-line text-left"
           >
             <div className="absolute inset-0 transition-transform duration-[1.2s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.05]">
-              <div className="flex h-full min-h-[180px] items-center justify-center bg-surface/50 p-8"><div className="max-w-md text-center"><Terminal className="mx-auto mb-4" size={30}/><p className="font-mono text-[10px] tracking-[0.18em] text-muted uppercase">Project interface</p><p className="mt-2 text-sm text-muted">Open the case study for the project overview, source repository and local dashboard instructions.</p></div></div>
+              <div className="flex h-full min-h-[180px] items-center justify-center bg-surface/50 p-8"><div className="max-w-md text-center"><Terminal className="mx-auto mb-4" size={30}/><p className="font-mono text-[10px] tracking-[0.18em] text-muted uppercase">Project interface</p><p className="mt-2 text-sm text-muted">Open the deployed dashboard, inspect the project and explore its capabilities.</p></div></div>
             </div>
             <motion.div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: shine }} />
             <motion.div
@@ -67,7 +67,7 @@ function ProjectCard({ p, i, onOpen }: { p: Project; i: number; onOpen: () => vo
               className="pointer-events-none absolute top-0 left-0 hidden font-mono text-[10px] tracking-[0.2em] text-fg uppercase md:block"
               style={{ x: tagX, y: tagY, opacity: hover ? 1 : 0 }}
             >
-              <span className="ml-12 block translate-y-5 rounded-full border border-line bg-bg px-3 py-1.5 whitespace-nowrap">Open case study</span>
+              <span className="ml-12 block translate-y-5 rounded-full border border-line bg-bg px-3 py-1.5 whitespace-nowrap">Open project dashboard</span>
             </motion.div>
             <span className="absolute top-3 left-3 rounded-full border border-line bg-bg px-2.5 py-0.5 font-mono text-[10px] tracking-[0.18em] text-muted">
               {p.index}
@@ -98,6 +98,7 @@ function ProjectCard({ p, i, onOpen }: { p: Project; i: number; onOpen: () => vo
               Case study
               <ArrowRight size={14} className="transition-transform duration-500 group-hover:translate-x-1" />
             </button>
+            {p.dashboardUrl && <a href={p.dashboardUrl} target={p.dashboardUrl.startsWith('http') ? '_blank' : undefined} rel={p.dashboardUrl.startsWith('http') ? 'noreferrer' : undefined} className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg">Dashboard <ArrowUpRight size={13} /></a>}
             {p.github ? (
               <a href={p.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg">
                 <Github size={14} /> Source
@@ -193,16 +194,22 @@ function CaseStudy({ p, onClose, onNext }: { p: Project; onClose: () => void; on
 
             <div className="mt-12 overflow-hidden rounded-[3px] border border-line bg-surface/40 p-6 md:p-8">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <div><p className="font-mono text-[10px] tracking-[0.18em] text-muted uppercase">Dashboard access</p><h3 className="mt-2 text-xl font-medium">Run the actual project interface</h3></div>
-                <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] text-muted">LOCAL · PORT {p.dashboardPort}</span>
+                <div><p className="font-mono text-[10px] tracking-[0.18em] text-muted uppercase">Project dashboard</p><h3 className="mt-2 text-xl font-medium">{p.dashboardUrl ? 'Open the deployed project dashboard' : 'Run the local project interface'}</h3></div>
+                <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] text-muted">{p.dashboardUrl ? 'HOSTED / INTERACTIVE' : `LOCAL · PORT ${p.dashboardPort}`}</span>
               </div>
-              <p className="mt-4 max-w-[65ch] text-sm leading-relaxed text-muted">This project currently runs on the operator's machine. Start its Python service, then open the dashboard on that same computer. It is not yet a public multi-user dashboard, and this portfolio does not substitute sample metrics for live telemetry.</p>
+              <p className="mt-4 max-w-[65ch] text-sm leading-relaxed text-muted">{p.dashboardDescription || 'This project runs locally. Start its Python service, then open the dashboard on the same computer.'}</p>
               <div className="mt-5 flex flex-wrap items-center gap-3">
-                <code className="rounded border border-line bg-bg px-3 py-2 font-mono text-xs">{p.runCommand}</code>
-                {p.localDashboard && <code className="rounded border border-line bg-bg px-3 py-2 font-mono text-xs">Local URL: {p.localDashboard}</code>}
+                {p.dashboardUrl ? (
+                  <a href={p.dashboardUrl} target={p.dashboardUrl.startsWith('http') ? '_blank' : undefined} rel={p.dashboardUrl.startsWith('http') ? 'noreferrer' : undefined} className="inline-flex items-center gap-2 rounded-full bg-fg px-5 py-3 text-sm font-medium text-bg">Open project dashboard <ArrowUpRight size={14} /></a>
+                ) : (
+                  <>
+                    <code className="rounded border border-line bg-bg px-3 py-2 font-mono text-xs">{p.runCommand}</code>
+                    {p.localDashboard && <code className="rounded border border-line bg-bg px-3 py-2 font-mono text-xs">Local URL: {p.localDashboard}</code>}
+                  </>
+                )}
               </div>
-              {p.collectorCommand && <div className="mt-3"><p className="mb-2 font-mono text-[9px] tracking-[0.12em] text-muted uppercase">Linux live log collector · authorized host only</p><code className="block overflow-x-auto rounded border border-line bg-bg px-3 py-2 font-mono text-xs">{p.collectorCommand}</code></div>}
-              <p className="mt-3 font-mono text-[9px] tracking-[0.12em] text-faint uppercase">This localhost address is for the project operator only. It is not a public dashboard link for portfolio visitors.</p>
+              {!p.dashboardUrl && p.collectorCommand && <div className="mt-3"><p className="mb-2 font-mono text-[9px] tracking-[0.12em] text-muted uppercase">Authorized Linux log collector</p><code className="block overflow-x-auto rounded border border-line bg-bg px-3 py-2 font-mono text-xs">{p.collectorCommand}</code></div>}
+              {!p.dashboardUrl && <p className="mt-3 font-mono text-[9px] tracking-[0.12em] text-faint uppercase">This localhost address is for the project operator only. It is not a public dashboard link.</p>}
             </div>
 
             <dl className="mt-14 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 md:grid-cols-4">
@@ -305,12 +312,12 @@ export default function Projects() {
             <SplitText text="and shipped." delay={0.12} className="block font-serif font-normal tracking-[-0.03em] italic" />
           </h2>
         </div>
-        <p className="max-w-[34ch] text-sm text-muted md:text-right">Two connected defensive-security projects. Open either card for the full case study.</p>
+        <div className="flex flex-col gap-3 md:items-end"><p className="max-w-[34ch] text-sm text-muted md:text-right">Three connected security projects. Click a project preview to open its dashboard, or choose the case study for technical details.</p><a href="/projects/" className="inline-flex items-center gap-2 text-sm font-medium text-fg hover:opacity-75">All project dashboards <ArrowUpRight size={14} /></a></div>
       </div>
 
-      <ul className="mx-auto grid max-w-[1200px] gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-2">
+      <ul className="mx-auto grid max-w-[1400px] gap-x-7 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((p, i) => (
-          <ProjectCard key={p.id} p={p} i={i} onOpen={() => setOpenId(p.id)} />
+          <ProjectCard key={p.id} p={p} i={i} onOpen={() => setOpenId(p.id)} onOpenDashboard={() => { if (p.dashboardUrl) { window.location.assign(p.dashboardUrl); } else { setOpenId(p.id); } }} />
         ))}
       </ul>
 
