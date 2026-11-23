@@ -1,31 +1,50 @@
-# Dashboard and real-time status (read before publishing)
+# Dashboard and deployment status
 
-## What is working today
+Last checked: 23 November 2026.
 
-### SentinelOps
-- The dashboard is a local web application served by the Python process at `http://127.0.0.1:8787`.
-- The API reads its SQLite database and exposes health, summary, events and alerts endpoints.
-- The browser dashboard refreshes its data every 15 seconds.
-- To observe real endpoint activity, run the `monitor` command against a log file that is actively receiving entries, or ingest a fresh authorized event export. The bundled JSONL file is synthetic test data and must not be presented as live telemetry.
-- The server intentionally binds to localhost only. It is not an internet-facing multi-user service.
+## Portfolio project directory
 
-### SigmaForge
-- The local rule explorer is served by the Python process at `http://127.0.0.1:8788`.
-- It reads the actual rule files and regression cases from disk and computes validation, test and compilation results when API endpoints are requested.
-- Its included rules and cases are repository fixtures; these are not live SOC events.
+- Public portfolio: https://sandhya-rani-portfolio.vercel.app/
+- Central dashboard directory: https://sandhya-rani-portfolio.vercel.app/projects/
+- Source repository: https://github.com/Gutnukusandhyarani/sandhya-rani-portfolio
 
-## What is not deployed
+The portfolio lists three projects and links directly to each project dashboard.
 
-Neither dashboard currently has a public hosted URL. The project APIs are localhost-only, and SentinelOps stores data in a local SQLite file. The portfolio therefore does not claim public real-time monitoring or show fabricated dashboard data. The `Open local dashboard` links only work on the same computer where the respective Python server is running.
+## SentinelOps — hosted endpoint monitoring
 
-## What is required for a genuinely public, real-time dashboard
+- Dashboard: https://sentinelops-git-vercel-supabase-sandhya-6e9f.vercel.app/
+- Analyst console: https://sentinelops-git-vercel-supabase-sandhya-6e9f.vercel.app/analyst.html
+- Source repository: https://github.com/Gutnukusandhyarani/SentinelOps
+- Vercel + Supabase hosted environment on the \`vercel-supabase\` branch.
+- The authorized Windows collector reads selected Windows System event IDs and sends bounded batches over HTTPS. Supabase stores persistent normalized events and alerts.
+- At the verification checkpoint on 23 November 2026, the public aggregate endpoint reported 153 event records and one high-severity alert.
+- Public dashboard APIs return aggregates only. Detailed event and alert access is intended for authenticated analyst sessions.
+- Authentication and private analyst routes are deployed. A successful human browser login and a saved triage change still need an end-to-end verification.
+- The Windows collector scheduled task exists, but automatic startup via the task scheduler still needs to be verified.
 
-1. Separate the public portfolio frontend from the monitoring backend.
-2. Build a secure ingestion API with authentication, per-agent credentials, TLS, rate limiting, schema validation and audit logging.
-3. Replace local SQLite with a persistent managed database designed for concurrent remote ingestion.
-4. Add a supported endpoint agent that sends only explicitly selected telemetry from systems the operator owns or is authorized to monitor.
-5. Add user authentication, tenant isolation, role-based access, retention controls and secret management.
-6. Add streaming or short-interval dashboard updates and operational monitoring.
-7. Test ingestion, access control, data isolation, restart/recovery, and deployment before exposing it publicly.
+The public dashboard's event total is real stored telemetry from the configured endpoint, not bundled synthetic fixtures. A source-event timestamp is not a collector heartbeat. Do not claim continuous connectivity based only on that timestamp.
 
-Do not expose the current localhost server to the internet or publish real endpoint logs in a public repository. A static hosting service can host the portfolio, but it cannot run the current long-lived collector and SQLite service. Vercel is suitable for the portfolio frontend; the always-on ingestion/collector backend should run on an appropriate managed application host or VM. Vercel Functions have bounded invocation durations, so they are not a direct replacement for the current persistent local collector process.
+## SigmaForge — hosted detection workbench
+
+- Dashboard: https://sigma-forge-mu.vercel.app/
+- Source repository: https://github.com/Gutnukusandhyarani/SigmaForge
+- Hosted read-only rule workbench with YAML rule validation, ATT&CK tags, fixture-based regression results and supported query compilation.
+- At the verification checkpoint on 23 November 2026, the public API reported 6 rules, all 6 valid, and 8 of 8 regression cases passing.
+- Supported query outputs include Splunk SPL, Microsoft Sentinel KQL and Elastic query syntax for the documented subset.
+- These are repository rules and test fixtures, not live endpoint alerts. Generated queries must be validated in the target SIEM before operational use.
+
+## SentinelTrace — static SOC training dashboard
+
+- Dashboard: https://sandhya-rani-portfolio.vercel.app/sentineltrace/dashboard/
+- Source repository: https://github.com/Gutnukusandhyarani/SentinelTrace
+- Static dashboard copied into the portfolio's public assets so the interface can be opened without running a local server.
+- Dashboard data files remain clearly labelled synthetic training records. Copilot examples use a deterministic mock provider; fixture validation is not an LLM accuracy metric.
+- SIEM SPL/KQL examples have not been validated against a connected production Splunk or Microsoft Sentinel workspace.
+
+## Data and security boundaries
+
+- Do not upload real employer, customer or private endpoint logs to public repositories.
+- Use collectors only on devices and logs you own or are explicitly authorized to monitor.
+- Keep collector credentials, Supabase server credentials and analyst access credentials server-side.
+- Do not describe any dashboard as production-grade SOC or enterprise SIEM software.
+- Keep synthetic fixtures, mock-copilot outputs, live telemetry aggregates and source-rule tests clearly distinguished.
