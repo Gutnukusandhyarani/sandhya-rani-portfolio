@@ -2,49 +2,48 @@
 
 ## 1. Confirm the public profile details
 
-The portfolio uses the profile details from the supplied resume. Review `src/data/portfolio.ts` before publishing, especially the email, LinkedIn URL, GitHub profile and availability wording.
+The portfolio uses the profile details in \`src/data/portfolio.ts\`. Review the email, LinkedIn URL, GitHub profile and availability wording before sharing the site.
 
-## 2. Project repositories are already published
+## 2. Featured project repositories
 
-The portfolio is configured to link to these existing public repositories:
+The portfolio intentionally features two projects:
 - SentinelOps: https://github.com/Gutnukusandhyarani/SentinelOps
 - SigmaForge: https://github.com/Gutnukusandhyarani/SigmaForge
 
-Do not upload the project folders again when updating the portfolio repository.
+The standalone SentinelTrace repository is not part of this portfolio's project list, dashboard directory, or career copy.
 
 ## 3. Resume
 
-The current resume is copied to `public/resume.pdf`. Replace it whenever the resume is updated, keeping the filename `resume.pdf`.
+The downloadable resume is served from \`public/resume.pdf\`. Its current version highlights SentinelOps and SigmaForge. Keep the filename \`resume.pdf\` when replacing it with a later revision.
 
-## 4. Dashboard availability
+## 4. Project dashboards
 
-The project case studies show the local dashboard addresses and commands:
-- SentinelOps: `python -m sentinelops serve`, then open `http://127.0.0.1:8787` on the same computer.
-- SigmaForge: `python -m sigmaforge serve`, then open `http://127.0.0.1:8788` on the same computer.
+Both featured project dashboards are hosted:
+- SentinelOps public overview: https://sentinelops-git-vercel-supabase-sandhya-6e9f.vercel.app/
+- SentinelOps private analyst console: https://sentinelops-git-vercel-supabase-sandhya-6e9f.vercel.app/analyst.html
+- SigmaForge detection workbench: https://sigma-forge-mu.vercel.app/
+- Central dashboard directory: https://sandhya-rani-portfolio.vercel.app/projects/
 
-These are not public dashboard URLs. A recruiter clicking a localhost address on the hosted portfolio would reach their own computer, not your computer. Neither dashboard is publicly hosted today.
+Data boundaries must remain visible:
+- SentinelOps public dashboard shows aggregate endpoint telemetry only; detailed records require analyst sign-in.
+- SigmaForge reads repository YAML rules and regression fixtures. It does not receive live endpoint telemetry.
+- Generated SIEM queries must be validated in the target environment before operational use.
 
-## 5. Publish using GitHub Pages (recommended for this repository)
+## 5. Publish using Vercel
 
-The `.github/workflows/deploy.yml` workflow is already included. After merging the updated portfolio into `main`:
-1. Open the GitHub repository → **Settings** → **Pages**.
-2. Under **Build and deployment → Source**, choose **GitHub Actions**.
-3. Open the **Actions** tab and check the `Deploy portfolio to GitHub Pages` workflow.
-4. When the workflow succeeds, open **Settings → Pages** and use **Visit site**.
+The portfolio repository is linked to Vercel and deploys from the \`main\` branch. The project uses:
+- Framework: Vite
+- Install command: \`npm ci\`
+- Build command: \`npm run build\`
+- Output directory: \`dist\`
 
-The expected project-site URL is `https://gutnukusandhyarani.github.io/sandhya-rani-portfolio/`.
+After committing changes to \`main\`, check the Vercel production deployment and verify the portfolio, \`/projects/\`, and the public resume link.
 
-## 6. Vercel alternative
+## 6. Security and accuracy boundaries
 
-To use Vercel instead, import `Gutnukusandhyarani/sandhya-rani-portfolio` from GitHub and set:
-- Framework preset: Vite
-- Root directory: `./` (repository root)
-- Install command: `npm ci`
-- Build command: `npm run build`
-- Output directory: `dist`
-
-Do not configure both hosts to use the same custom domain.
-
-## 7. Keep the backend private until it is properly prepared
-
-The current SentinelOps server intentionally binds to localhost, stores data in a local SQLite database, and has no public authentication/tenant model. Do not change the bind address or forward its port to the internet. A genuinely public live dashboard requires a secure ingestion service, authenticated agents, persistent managed storage, access controls and deployment testing. See `DASHBOARD-REALTIME-STATUS.md`.
+- Keep collector credentials, Supabase server credentials and analyst access credentials server-side.
+- Do not upload private endpoint logs, employer records or customer information to public repositories.
+- Use collectors only on devices and logs you own or are explicitly authorized to monitor.
+- Do not describe either dashboard as a production-grade SOC or enterprise SIEM.
+- SentinelOps still needs final end-to-end verification of analyst login, saved triage persistence and scheduled collector startup.
+- SigmaForge validation numbers are repository fixture results, not proof of detections running in a connected Splunk or Sentinel workspace.
