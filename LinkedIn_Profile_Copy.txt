@@ -10,7 +10,7 @@ What I bring:
 • IT Operations: 2+ years supporting a global client account, managing technical cases from initial analysis through documentation, resolution, or escalation.
 • Networking Fundamentals: TCP/IP, IPv4/IPv6, DNS, DHCP, VPN, LAN/WAN, routers, switches, and network troubleshooting.
 • Trust & Safety Operations: Experience at Amazon with policy-based content reviews, quality checks, data handling, and confidentiality.
-• Practical Security Learning: Cybersecurity training covering networking fundamentals and ethical hacking basics, with exposure to Nmap, Wireshark, and Burp Suite. Built SentinelTrace, a Python-based lab for SSH authentication-log monitoring and rule-based alert triage.
+• Practical Security Projects: Built SentinelOps, a Python/PowerShell endpoint-monitoring lab with hosted telemetry aggregation, and SigmaForge, a Python detection-as-code workbench for YAML validation, regression testing and SIEM query generation.
 
 I am focused on growing in security monitoring, log analysis, incident investigation, and first-level SOC operations.
 
@@ -36,17 +36,25 @@ Suggested bullets:
 • Performed content annotation and quality reviews supporting Trust & Safety operations, applying defined policy guidelines in a high-volume workflow.
 • Maintained review accuracy and process integrity while following data-handling and confidentiality requirements for sensitive content.
 
-PROJECT - ADD AFTER REVIEWING THE CODE AND RUNNING THE TESTS
-Name: SentinelTrace - Python-Based SSH Authentication Log Monitoring & Threat Detection
-Date: November 2026
+PROJECTS
+
+SentinelOps - Hosted Endpoint Monitoring & SIEM Lab
 Description:
-Built a lightweight Python tool to parse Linux OpenSSH authentication logs and identify suspicious login patterns for first-level SOC triage.
-• Implemented rule-based detections for repeated SSH authentication failures (5+ attempts within 5 minutes), successful login after a failure burst, and remote root-account login.
-• Added severity prioritization, investigation recommendations, batch analysis, and file-follow monitoring.
-• Generated JSON, CSV, and HTML reports for analyst review.
-• Tested against 8 synthetic authentication events: 3 alerts generated (1 Critical, 2 High); 5 unit tests passing.
-Tools: Python, Linux OpenSSH logs, regular expressions, JSON, CSV, HTML, unittest.
-Note: Controlled portfolio lab using synthetic data; not a production SIEM deployment.
+Built a Python and PowerShell endpoint-monitoring lab with an authorized Windows System event collector, event normalization, detection rules and persistent Supabase storage.
+• Implemented read-only collection of selected Windows System event IDs and bounded HTTPS batch ingestion.
+• Added server-side collector credential validation, retry-safe event handling and detection/alert persistence.
+• Deployed a privacy-filtered public dashboard and a separate analyst console for detailed event review and alert triage.
+Tools: Python, PowerShell, Windows Event Logs, Supabase, Vercel, REST APIs.
+Scope: A defensive portfolio lab, not a production SOC. Final browser login, persisted triage and scheduled collector startup checks remain outstanding.
+
+SigmaForge - Detection-as-Code Workbench
+Description:
+Developed a Python workbench for YAML detection-rule validation, supported condition parsing, fixture-based regression testing and ATT&CK coverage.
+• Implemented rule structure and condition validation, duplicate-ID checks and quality warnings.
+• Generated supported Splunk SPL, Microsoft Sentinel KQL and Elastic queries.
+• Hosted a read-only rule dashboard; the API reported 6 valid rules and 8/8 regression cases passing at the 23 November 2026 checkpoint.
+Tools: Python, YAML, MITRE ATT&CK, Splunk SPL, Microsoft Sentinel KQL, Elastic.
+Scope: These results are repository fixture tests, not proof of live detections in a connected SIEM.
 
 TOP 15 SKILLS
 1. Incident Management (pin)
@@ -79,8 +87,7 @@ Visibility: Recruiters only.
 
 FEATURED SECTION - PRIORITY ORDER
 1. SOC Analyst CV - PDF
-2. SentinelTrace project repository (GitHub link after upload)
-3. SentinelTrace sample triage report / case study
+2.  project repository (GitHub link after upload)
 4. Frontlines Edutech cybersecurity credential (only the actual certificate or verifiable badge)
 
 PROFILE CLEANUP NOTES
