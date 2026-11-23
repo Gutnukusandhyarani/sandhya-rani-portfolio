@@ -312,10 +312,10 @@ export default function Projects() {
             <SplitText text="and shipped." delay={0.12} className="block font-serif font-normal tracking-[-0.03em] italic" />
           </h2>
         </div>
-        <div className="flex flex-col gap-3 md:items-end"><p className="max-w-[34ch] text-sm text-muted md:text-right">Three connected security projects. Click a project preview to open its dashboard, or choose the case study for technical details.</p><a href="/projects/" className="inline-flex items-center gap-2 text-sm font-medium text-fg hover:opacity-75">All project dashboards <ArrowUpRight size={14} /></a></div>
+        <div className="flex flex-col gap-3 md:items-end"><p className="max-w-[34ch] text-sm text-muted md:text-right">Two connected defensive-security projects. Open a project preview to launch its dashboard, or choose the case study for technical details.</p><a href="/projects/" className="inline-flex items-center gap-2 text-sm font-medium text-fg hover:opacity-75">All project dashboards <ArrowUpRight size={14} /></a></div>
       </div>
 
-      <ul className="mx-auto grid max-w-[1400px] gap-x-7 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="mx-auto grid max-w-[1400px] gap-x-7 gap-y-14 md:grid-cols-2 lg:grid-cols-2">
         {projects.map((p, i) => (
           <ProjectCard key={p.id} p={p} i={i} onOpen={() => setOpenId(p.id)} onOpenDashboard={() => { if (p.dashboardUrl) { window.location.assign(p.dashboardUrl); } else { setOpenId(p.id); } }} />
         ))}
